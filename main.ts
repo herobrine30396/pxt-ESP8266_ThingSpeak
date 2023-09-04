@@ -64,7 +64,7 @@ namespace ESP8266ThingSpeak {
     //% ip.defl=api.thingspeak.com
     //% write_api_key.defl=your_write_api_key
     export function connectThingSpeak(ip: string, write_api_key: string, n1: number, n2: number, n3: number, n4: number, n5: number, n6: number, n7: number, n8: number) {
-        if (wifi_connected && write_api_key != "") {
+        if (write_api_key != "") { //wifi_connected && 
             thingspeak_connected = false
             sendAT("AT+CIPSTART=\"TCP\",\"" + ip + "\",80", 0) // connect to website server
             thingspeak_connected = waitResponse()
